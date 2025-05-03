@@ -1,0 +1,10 @@
+ARG BASE_IMAGE=steamcmd/steamcmd:latest
+
+EXPOSE 2302/udp # Default Arma3 game port
+EXPOSE 2303/udp # Steam Query port
+EXPOSE 2304/udp # Steam port
+EXPOSE 2305/udp # VON port
+EXPOSE 2306/udp # BattleEye incomming
+EXPOSE 2344/udp # BattleEye outgoing
+EXPOSE 2344/tcp # BattleEye outgoing
+EXPOSE 2345/tcp # BattleEye outgoing
