@@ -3,3 +3,6 @@
 
 # build files
 dockerfiles/
+build/
+old-scripts/
+modlist.txt
