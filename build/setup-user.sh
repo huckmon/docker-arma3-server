@@ -2,5 +2,5 @@
 
 set -e
 
-addgroup --gid 1000 arma
-adduser --system --shell /bin/false --uid 1000 --ingroup arma --home /home/arma arma
+groupadd --gid 777 arma
+useradd --system --shell /bin/false --uid 777 -g arma --home-dir /home/arma arma

@@ -3,15 +3,13 @@ FROM steamcmd/steamcmd:latest
 # Update and install needed tools
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install coreutils rename nano -y && \
+    apt-get install coreutils rename nano adduser -y && \
     apt-get clean && \
     rm -rf /var/lib/opt/lists/*
 
-RUN /build/setup-user.sh
-
 RUN mkdir /data
-
-RUN chown -R arma:arma /data
+RUN addgroup --gid 777 arma
+RUN adduser --system --shell /bin/false --uid 777 --ingroup arma --home /data arma
 
 RUN steamcmd +exit
 
