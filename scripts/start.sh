@@ -4,5 +4,5 @@ chown -R arma:arma /data
 
 # run server file validation and install if needed
 
-exec su arma --comand="/install_server.sh"
+exec "/install_server.sh"
 
