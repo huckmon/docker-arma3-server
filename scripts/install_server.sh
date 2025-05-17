@@ -37,3 +37,6 @@ else
     echo "|--- Installing server - steamcmd $install_cmd +quit"
     steamcmd $install_cmd +quit
 fi
+
+# run server
+exec /start_server.sh

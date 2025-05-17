@@ -21,7 +21,7 @@ VOLUME [ "/data" ]
 WORKDIR /data
 
 COPY --chmod=755 ./scripts/start.sh /
-COPY ./scripts/install_server.sh /
-COPY ./scripts/start_server.sh /
+COPY --chmod=755 ./scripts/install_server.sh /
+COPY --chmod=755 ./scripts/start_server.sh /
 
 ENTRYPOINT [ "/start.sh" ]
