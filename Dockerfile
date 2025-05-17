@@ -8,8 +8,8 @@ RUN apt-get update && \
     rm -rf /var/lib/opt/lists/*
 
 RUN mkdir /data
-RUN addgroup --gid 777 arma
-RUN adduser --system --shell /bin/false --uid 777 --ingroup arma --home /data arma
+RUN addgroup --gid 1000 arma
+RUN adduser --system --shell /bin/false --uid 1000 --ingroup arma --home /data arma
 
 RUN steamcmd +exit
 
