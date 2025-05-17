@@ -1,7 +1,7 @@
 # Introduction
-This is an Arma 3 server container intended to be capable of being used as vanilla or modded.
+This is an Arma 3 server container intended to be capable of being used as vanilla or modded.\
 
-This readme should include all that you need to get the server up and running.
+This readme should include all that you need to get the server up and running.\
 [Github](https://github.com/huckmon/docker-arma3-server)
 
 # Steps for using
@@ -41,8 +41,7 @@ UDP ports
 - 2304
 - 2305
 - 2306
-- 2344
-
+- 2344\
 TCP ports
 - 2344
 - 2345
@@ -51,8 +50,8 @@ TCP ports
 To add mods to the server, create a file called `modlist.txt` and place it in the `/data` directory.
 To add mods with the modlist file, add the mods by taking the steamworkshop ID number and placing it in the text file each seperated by a line e.g.
 
-2867537125
-1638341685
+2867537125\
+1638341685\
 1724884525
 
 # Docker Compose example
