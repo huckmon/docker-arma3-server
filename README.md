@@ -7,7 +7,8 @@ This readme should include all that you need to get the server up and running.
 # Steps for using
 You'll need to do some specific steps due to the fact that downloading and updating Arma 3 server files with steamcmd requires a steam account that owns the game. Other sections under this one will also inform you on how to mount server files and the general directory of the container
 ## Caching user credentials
-To download the server files, you'll need to login with a steam profile that owns Arma 3. To add steam user credentials to the container, follow these steps.
+To download the server files, you'll need to login with a steam profile that owns Arma 3.  
+To add steam user credentials to the container, follow these steps.
 1. add `entrypoint: "/bin/bash"` to compose file
 2. `sudo docker exec -it <container-name> bash`
 3. `su arma` 
