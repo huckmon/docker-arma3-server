@@ -2,7 +2,6 @@
 This is an Arma 3 server container intended to be capable of being used as vanilla or modded.  
 
 This readme should include all that you need to get the server up and running.  
-[Github](https://github.com/huckmon/docker-arma3-server)
 
 # Steps for using
 You'll need to do some specific steps due to the fact that downloading and updating Arma 3 server files with steamcmd requires a steam account that owns the game. Other sections under this one will also inform you on how to mount server files and the general directory of the container
