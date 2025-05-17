@@ -16,7 +16,8 @@ To add steam user credentials to the container, follow these steps.
 6. `quit` (from steamcmd)
 7. `quit` (from exec session)
 8. Remove the entrypoint line from the compose file
-Your steam profile should be cached to allow the container to download updates for the server without having to repeat these steps
+Your steam profile should be cached to allow the container to download updates for the server without having to repeat these steps  
+It's slightly janky, but other options need a lot of work (which is a later issue if at all).
 
 ## Data Directory
 All server files will be stored in the `./data` volume
