@@ -12,6 +12,8 @@ mods_loaded="false"
 mod_prefix="-mod=\"$mod_dir/"
 mod_param=""
 
+exec cd /data
+
 #check if a user to run the server has been listed
 if [ $arma_user != "" ]; then
     start_cmd_prefix="${install_dir}arma3server_x64 -name=$arma_user -config=server.cfg -world=empty"
@@ -31,15 +33,17 @@ if [ -f "modlist.txt" ]; then
         a=`expr $a + 1`
     done
     mods_loaded="true"
+    mod_cmd="${mod_cmd} "
 else
     echo "|--- No modlist found, starting normally ---|"
 fi
 
+exec cd /data
 
 if [ $mods_loaded == "true" ]; then
     echo "|--- Starting Arma 3 server with mods enabled - $start_cmd_prefix$mod_cmd$start_cmd_end"
-    $start_cmd_prefix$mod_cmd$start_cmd_end
+    exec su arma --command="$start_cmd_prefix$mod_cmd$start_cmd_end"
 else
     echo "|--- Starting Arma 3 server - $start_cmd_prefix$start_cmd_end"
-    $start_cmd_prefix$start_cmd_end
+    exec su arma --command="$start_cmd_prefix$start_cmd_end"
 fi
