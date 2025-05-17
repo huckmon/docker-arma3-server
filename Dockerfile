@@ -8,8 +8,9 @@ RUN apt-get update && \
     rm -rf /var/lib/opt/lists/*
 
 RUN mkdir /data
+RUN deluser ubuntu
 RUN addgroup --gid 1000 arma
-RUN adduser --system --shell /bin/false --uid 1000 --ingroup arma --home /data arma
+RUN adduser --uid 1000 --ingroup arma --home /data arma
 
 RUN steamcmd +exit
 
@@ -23,5 +24,6 @@ WORKDIR /data
 COPY --chmod=755 ./scripts/start.sh /
 COPY --chmod=755 ./scripts/install_server.sh /
 COPY --chmod=755 ./scripts/start_server.sh /
+COPY --chmod=755 ./scripts/rename_mods.sh /
 
 ENTRYPOINT [ "/start.sh" ]
