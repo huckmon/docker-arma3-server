@@ -8,4 +8,4 @@ echo "|--- Renamaing mod files located at ${mod_dir} ---|"
 find $mod_dir -depth -exec rename 's/(.*)\/([^\/]*)/$1\/\L$2/' {} \;
 echo "|--- Finished renamaing mod files ---|"
 
-exec su arma --command="/start_server.sh"
+exec "/start_server.sh"
