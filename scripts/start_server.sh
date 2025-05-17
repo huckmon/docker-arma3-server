@@ -1,17 +1,12 @@
 #!/usr/bin/env bash
 
-# This script updates the system and
-
-arma_user="docker"
-user="arma"
-
 install_dir="/data/"
-mod_dir="${install_dir}workshop/content/107410"
+mod_dir="${install_dir}steamapps/workshop/content/107410"
 
 
 # steamcmd start command args
 a=1
-modlist=".${install_dir}modlist.txt"
+modfile="/data/modlist.txt"
 mod_cmd="" # stores command for mods
 mods_loaded="false"
 mod_prefix="-mod=\"$mod_dir/"
@@ -23,25 +18,28 @@ if [ $arma_user != "" ]; then
 else
     start_cmd_prefix="${install_dir}arma3server_x64 -config=server.cfg -world=empty"
 fi
-
 start_cmd_end="-noSound -netlog"
 
-if [ -r "${install_dir}modlist.txt" ]; then
-    modlist_lines=`wc -l < $modlist`
-    while [ $a -lt `expr $modlist_lines + 1` ]
+echo "|--- checking if $(pwd)/modlist.txt exists ---|"
+if [ -f "modlist.txt" ]; then
+    modfile_lines=`wc -l < $modfile`
+    while [ $a -lt `expr $modfile_lines + 1` ]
     do
-        current_line=`sed -n ${a}p $modlist`
-        mod_param="$mod_param $mod_prefix$current_line\""
+        current_line=`sed -n ${a}p $modfile`
+        mod_param="$mod_cmd $mod_prefix$current_line\""
+        mod_cmd=$mod_param
         a=`expr $a + 1`
     done
     mods_loaded="true"
+else
+    echo "|--- No modlist found, starting normally ---|"
 fi
 
 
 if [ $mods_loaded == "true" ]; then
-    echo "|--- Starting Arma 3 server with mods enabled - .$start_cmd_prefix$mod_param$start_cmd_end"
-    .$start_cmd_prefix$mod_param$start_cmd_end
+    echo "|--- Starting Arma 3 server with mods enabled - $start_cmd_prefix$mod_cmd$start_cmd_end"
+    $start_cmd_prefix$mod_cmd$start_cmd_end
 else
-    echo "|--- Starting Arma 3 server - .$start_cmd_prefix$start_cmd_end"
-    .$start_cmd_prefix$start_cmd_end
+    echo "|--- Starting Arma 3 server - $start_cmd_prefix$start_cmd_end"
+    $start_cmd_prefix$start_cmd_end
 fi
