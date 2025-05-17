@@ -48,7 +48,7 @@ TCP ports
 - 2345
 
 ## Adding/Using Workshop Mods
-To add mods to the server, create a file called `modlist.txt` and place it in the `/data` directory.
+To add mods to the server, create a file called `modlist.txt` and place it in the `/data` directory.  
 To add mods with the modlist file, add the mods by taking the steamworkshop ID number and placing it in the text file each seperated by a line e.g.
 
 ```
