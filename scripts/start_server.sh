@@ -40,8 +40,8 @@ fi
 
 if [ $mods_loaded == "true" ]; then
     echo "|--- Starting Arma 3 server with mods enabled - .$start_cmd_prefix$mod_param$start_cmd_end"
-    runuser -u arma .$start_cmd_prefix$mod_param$start_cmd_end
+    .$start_cmd_prefix$mod_param$start_cmd_end
 else
     echo "|--- Starting Arma 3 server - .$start_cmd_prefix$start_cmd_end"
-    runuser -u arma .$start_cmd_prefix$start_cmd_end
+    .$start_cmd_prefix$start_cmd_end
 fi
