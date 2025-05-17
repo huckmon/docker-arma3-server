@@ -21,9 +21,7 @@ EXPOSE 2344-2345/tcp
 VOLUME [ "/data" ]
 WORKDIR /data
 
-COPY --chmod=755 ./scripts/start.sh /
-COPY --chmod=755 ./scripts/install_server.sh /
-COPY --chmod=755 ./scripts/start_server.sh /
-COPY --chmod=755 ./scripts/rename_mods.sh /
+COPY --chmod=755 scripts/* /
 
 ENTRYPOINT [ "/start.sh" ]
+
