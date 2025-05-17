@@ -2,5 +2,7 @@
 
 set -e
 
-groupadd --gid 777 arma
-useradd --system --shell /bin/false --uid 777 -g arma --home-dir /home/arma arma
+deluser ubuntu
+
+groupadd --gid 1000 arma
+useradd --system --shell /bin/false --uid 1000 -ingroup arma --home /data arma
