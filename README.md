@@ -79,3 +79,8 @@ services:
     tty: true
     #entrypoint: "/bin/bash"
 ```
+
+# Common Issues
+
+## Some of the workshop items are failing to install/download
+This seems to be a common issue when installing large workshop items as part of a bulk download. I recommend exec'ing into the container and then downloading the large mods individually with steamcmd.
