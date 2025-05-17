@@ -1,7 +1,7 @@
 # Introduction
-This is an Arma 3 server container intended to be capable of being used as vanilla or modded.\
+This is an Arma 3 server container intended to be capable of being used as vanilla or modded.  
 
-This readme should include all that you need to get the server up and running.\
+This readme should include all that you need to get the server up and running.  
 [Github](https://github.com/huckmon/docker-arma3-server)
 
 # Steps for using
@@ -41,7 +41,7 @@ UDP ports
 - 2304
 - 2305
 - 2306
-- 2344\
+- 2344  
 TCP ports
 - 2344
 - 2345
