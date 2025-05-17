@@ -3,7 +3,7 @@ This is an Arma 3 server container intended to be capable of being used as vanil
 
 This readme should include all that you need to get the server up and running.  
 
-# Steps for using
+# Steps for Use
 You'll need to do some specific steps due to the fact that downloading and updating Arma 3 server files with steamcmd requires a steam account that owns the game. Other sections under this one will also inform you on how to mount server files and the general directory of the container
 ## Caching user credentials
 To download the server files, you'll need to login with a steam profile that owns Arma 3.  
@@ -82,5 +82,5 @@ services:
 
 # Common Issues
 
-## Some of the workshop items are failing to install/download
-This seems to be a common issue when installing large workshop items as part of a bulk download. I recommend exec'ing into the container and then downloading the large mods individually with steamcmd.
+##  Q: Some of the workshop items are failing to install/download
+A: This seems to be a common issue when installing large workshop items as part of a bulk download. I recommend exec'ing into the container and then downloading the large mods individually with steamcmd.
