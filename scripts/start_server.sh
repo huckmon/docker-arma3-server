@@ -17,7 +17,13 @@ mods_loaded="false"
 mod_prefix="-mod=\"$mod_dir/"
 mod_param=""
 
-start_cmd_prefix="${install_dir}arma3server_x64 -name=$arma_user -config=server.cfg -world=empty"
+#check if a user to run the server has been listed
+if [ $arma_user != "" ]; then
+    start_cmd_prefix="${install_dir}arma3server_x64 -name=$arma_user -config=server.cfg -world=empty"
+else
+    start_cmd_prefix="${install_dir}arma3server_x64 -config=server.cfg -world=empty"
+fi
+
 start_cmd_end="-noSound -netlog"
 
 if [ -r "${install_dir}modlist.txt" ]; then
