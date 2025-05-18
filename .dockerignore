@@ -5,4 +5,4 @@
 dockerfiles/
 build/
 old-scripts/
-modlist.txt
+test-scripts/
