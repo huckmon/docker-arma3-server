@@ -57,6 +57,7 @@ To add mods with the modlist file, add the mods by taking the steamworkshop ID n
 1638341685
 1724884525
 ```
+Planning to add the ability to add mods with an environment variable that has the workshop IDs comma serpeated in a single line in the case you don't want to make a text file with them.
 # Docker Compose example
 ```
 services:
@@ -83,5 +84,8 @@ services:
 
 # Common Issues
 
-##  Q: Some of the workshop items are failing to install/download
+## Q: Some of the workshop items are failing to install/download
 A: This seems to be a common issue when installing large workshop items as part of a bulk download. I recommend exec'ing into the container and then downloading the large mods individually with steamcmd.
+
+## Q: My Mods aren't Loading!!!
+A: This might be because you've left spaces in the modlist.txt document. Currently the container doesn't filter spaces from the lines and I intend to fix this eventually.
