@@ -18,7 +18,7 @@ if [ -f "modlist.txt" ]; then
     modfile_lines=`wc -l < $modfile`
     while [ $a -lt `expr $modfile_lines + 1` ]
     do
-        current_line=`sed -n ${a}p $modfile`
+        current_line="$(sed -n ${a}p $modfile | grep -E -o '[0-9]+')"
         mod_param="$mod_cmd $mod_prefix$current_line"
         mod_cmd=$mod_param
         a=`expr $a + 1`
